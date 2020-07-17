@@ -74,7 +74,7 @@ const FoodDetails: React.FC = () => {
   useEffect(() => {
     async function loadFood(): Promise<void> {
       // Load a specific food with extras based on routeParams id
-      const url = `/foods/${routeParams.id}/`;
+      const url = `/foods/${routeParams.id}`;
       const { data } = await api.get<Food>(url);
 
       const foodExtras = data.extras.map(
@@ -131,7 +131,7 @@ const FoodDetails: React.FC = () => {
 
   function handleDecrementFood(): void {
     // Decrement food quantity
-    if (foodQuantity > 0) {
+    if (foodQuantity > 1) {
       setFoodQuantity(foodQuantity - 1);
     }
   }
